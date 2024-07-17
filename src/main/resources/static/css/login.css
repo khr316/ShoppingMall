@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-wrapper {
+    width: 400px;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-wrapper>h2 {
+    font-size: 24px;
+    color: #6A24FE;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+#login-form>input {
+    width: 100%;
+    height: 48px;
+    padding: 0 15px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#login-form>input:focus {
+    border-color: #6A24FE;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(106, 36, 254, 0.2);
+}
+
+#login-form>input::placeholder {
+    color: #d2d2d2;
+}
+
+#login-form>input[type="submit"] {
+    color: #fff;
+    font-size: 16px;
+    background-color: #6A24FE;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login-form>input[type="submit"]:hover {
+    background-color: #5a1edf;
+}
+
+#login-form>input[type="checkbox"] {
+    display: none;
+}
+
+#login-form>label {
+    color: #999;
+}
+
+#login-form input[type="checkbox"]+label {
+    cursor: pointer;
+    padding-left: 26px;
+    background-image: url("checkbox.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#login-form input[type="checkbox"]:checked+label {
+    background-image: url("checkbox-active.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#register-form>input[type="submit"] {
+    color: #fff;
+    font-size: 16px;
+    background-color: #ff4d4d;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#register-form>input[type="submit"]:hover {
+    background-color: #e60000;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+}

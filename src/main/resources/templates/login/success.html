@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #444;
+        }
+
+        p {
+            font-size: 24px;
+            font-weight: 500;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .link-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        a {
+            padding: 15px 25px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            color: white;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        a[href="/product"] {
+            background-color: #007bff;
+        }
+
+        a[href="/user/sellerpage"] {
+            background-color: #28a745;
+        }
+
+        a[href="/shop"] {
+            background-color: #17a2b8;
+        }
+
+        a[href="/user/mypage"] {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        a[href="/manage"] {
+            background-color: #dc3545;
+        }
+
+        .footer {
+            margin-top: auto;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <p th:text="|${session.userName} ${session.userGrade} |"></p>
+    <div class="link-container">
+        <block th:if="${session.userGrade} == '1'">
+            <a href="/product">상품등록</a>
+            <a href="/user/sellerpage">MyPage</a>
+        </block>
+        <block th:if="${session.userGrade} == '4'">
+            <a href="/shop">쇼핑하기</a>
+            <a href="/user/mypage">MyPage</a>
+        </block>
+        <block th:if="${session.userGrade} == 14">
+            <a href="/manage">관리자페이지</a>
+        </block>
+    </div>
+</body>
+
+</html>
